@@ -110,7 +110,7 @@ date: May 2018
  - Allow you to make notes for others reading the code.
  - Vital to understanding your code
    - Trust Me! Its a very good habit to get into
- - Are ignored by the interperter
+ - Are ignored by the interpreter
  
 ## Comment Syntax
 
@@ -122,10 +122,10 @@ date: May 2018
  
  - Multiline
  
- '''js
+```js
  // This is a 
  // Multiline Comment
- ```
+```
  
 ## A Better way of multiline
 
@@ -166,6 +166,7 @@ date: May 2018
 
 ```js
 [[1,"foo"],[2,"Bar"]]
+
 [{id:1,name:"Dan"},
  {id:2,name:"James"}]
 ```
@@ -198,7 +199,7 @@ a.length // returns 3
  
 ```js
 var a = ["foo", "bar", "baz"]
-a[1] = "Bleh"
+a[1] = "bleh"
 // A then becomes
 ["foo", "bleh", "baz"]
 ```
@@ -224,7 +225,7 @@ var a
 var name="Dan"
 ```
 
- - If the variable has no value assigned its type is *underfined* 
+ - If the variable has no value assigned its type is *undefined* 
 
 ## Defining variables
 
@@ -274,9 +275,9 @@ alert(answer)
 
 ## Basic Operators:  Increment / Decrements
 
-- **++* Add 1 to the value 
+- **++** Add 1 to the value 
    - 5++ (6)
-- **--* Subtract 1 from value
+- **--** Subtract 1 from value
    - 5-- (4)
 - **+=** Increase by a given value)
    - 5+=3 (8)
@@ -285,7 +286,7 @@ alert(answer)
    
 ## Basic operators: String Concatenation
 
- - We also use **+** for concatenation.  So 
+ - We also use **+** for string concatenation.  So: 
  
  ```js
  "Foo" + "Bar" == "FooBar"
@@ -375,6 +376,7 @@ alert(answer)
 ## Selection: Switch Ranges
 - Either *fallthrough* to the first statement
 
+\scriptsize
 ```js
 int day = 0;  //Numeric 
 switch(day){
@@ -468,7 +470,7 @@ do {
 ## Function Definition
 
  - Should be familiar to any programmers
- - Core compoenent in understanding JS
+ - Core component in understanding JS
  
  ```js
  function add(x, y) {
@@ -482,10 +484,10 @@ do {
 
 ## Breaking down the function definition
 
- - Function Keywork **function**
+ - Function Keyword **function**
  - Name **add**
  - Parameters **(x,y)**
- - Funtion  Body between **{..}**
+ - Function  Body between **{..}**
 ```js
  function add(x, y) {
  ...
@@ -503,7 +505,7 @@ do {
    - **function_name**
 
 
-## Funciton Paramerters
+## Function Parameters
  
  - Can take 0 or more named parameters
  - These are variables that are *passed* to the function for use in body
@@ -555,7 +557,7 @@ function area(radius){
 
 ## Types of Function: Anonymous Functions
 
- - We assign a function to a variable.  This means we can change the function at runtime
+ - We assign a function to a variable.  This means we can change the function at run-time
 
  ```js
  var  add = function(x, y) {
@@ -568,15 +570,15 @@ function area(radius){
 
  - Call with Brackets () containing the required parameters
  - add(1,2) // returns 3
- - Passes controll of the program to the function
+ - Passes control of the program to the function
    - Parameters are passed across
-   - Also two "Hidden" paramters, (this, arguments)
+   - Also two "Hidden" parameters, (this, arguments)
  
 
 ## Function Scope
 
  - JS uses function scope
- - All variables defined inside a function are **visable** within **THAT** function
+ - All variables defined inside a function are **visible** within **THAT** function
  - Variables defined outside a function are **NOT VISIBLE** inside the function
 
 
@@ -591,13 +593,13 @@ function area(radius){
 
 ## The DOM:
 
- - A Tree representaion of the HTML within your web page
+ - A Tree representation of the HTML within your web page
  - The root element of the DOM is the *document*
  - Each HTML tag is a Node
    - Each Node my have children
    - Each node will have a parent
 
-## Functions for locating items in the Dom
+## Functions for locating items in the DOM
 
  - getElementById()
  - getElementByName()
@@ -615,7 +617,7 @@ function area(radius){
 
 ## Modifing the content of Tags
 
-We can do this in Javascript
+We can do this in JavaScript
 
 ```js
 <script>
@@ -655,9 +657,9 @@ window.onload = function() {
 
 
  
-# Objects in Javascript
+# Objects in JavaScript
 
-## Classless Javascript
+## Classless JavaScript
 
  - Until recently JS had no class
    - True Class was introduced in ECMA6
@@ -665,14 +667,14 @@ window.onload = function() {
  
 ## Objects
 
- - Can be throught of as simple collections of name:value pairs
+ - Can be thought of as simple collections of name:value pairs
     - The Dictionaries in above example
 	- Can also contain functions
 
 ## Name Value Pairs
 
  - Name is a string
-   - Quotes are optional if it would be a vailid JS variable name
+   - Quotes are optional if it would be a valid JS variable name
  - Value can be any JS value
    - String, Integer, List etc
    - Includes other Objects
@@ -740,10 +742,10 @@ var nested = {
 
 ## Functions as Object properties
 
- - Remember that an object can contain *ANY* javascript object
+ - Remember that an object can contain *ANY* JavaScript object
  - This includes Functions
-   - Gives Class like functionlity
- - When the function is called, it ocurs within the object
+   - Gives Class like functionality
+ - When the function is called, it occurs within the object
  
 ## Functions as Object Parameters
 
