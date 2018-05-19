@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Load Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>Simple Address Lookup</h1>
+
+  <div id="div1"><p>Data to be loaded<p></div>
+  <button id="loadButton">Get External Content</button>
+  
+  <script>
+    // Load code when all the Dom has happened
+    $(document).ready(function(){
+      //Callback for Button
+      $("#loadButton").click(function(){
+        var URL = "https://www.als.ogcio.gov.hk/lookup?q=VTC"
+        console.log("Making Request from " + URL)
+        $.get(URL, function(data, status, xhr){
+          //If the data had an error loading correctly
+          //alert(status)
+          console.log(status)
+          if (status == "error"){
+            alert("Error Loading Text")
+          }
+          else{
+            alert("Data loaded succesfully")
+            console.log(data)
+          }
+        }) //Load Callback
+      }) //Button 
+    }) //Document
+  </script>
+</body>
+</html>

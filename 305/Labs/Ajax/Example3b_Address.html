@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Load Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>Simple Address Lookup</h1>
+  
+  <table border=1 id="theTable">
+    <thead>
+      <tr><th>Name</th><th>Address</th><th>Lat</th><th>Long</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  
+  
+  <h3>
+    Search Box
+  </h3>
+  
+  <input type="text" id="searchinput">
+  <button id="loadButton">Get External Content</button>  
+  
+  
+  
+  <script>
+    // Load code when all the Dom has happened
+    $(document).ready(function(){
+      //Callback for Button
+      $.ajaxSetup({dataType: "json"})
+      $("#loadButton").click(function(){
+        var URL = "https://www.als.ogcio.gov.hk/lookup?q=VTC"
+        console.log("Making Request from " + URL)
+        $.getJSON(URL, function(data, status, xhr){
+          //If the data had an error loading correctly
+          //alert(status)
+          console.log(status)
+          if (status == "error"){
+            alert("Error Loading Text")
+          }
+          else{
+            //alert("Data loaded succesfully")
+            console.log(data)
+            //Now we have to do something with it.
+            console.log(data["SuggestedAddress"])
+            
+            for (i = 0; i < data["SuggestedAddress"].length; i++){
+              var item = data["SuggestedAddress"][i] //Fetch ONLY THE FIRST from the list
+              //Store the Address Object
+              var address = item["Address"]["PremisesAddress"]["EngPremisesAddress"]
+              var buildingName = address["BuildingName"]
+              console.log(address)
+              console.log(buildingName)
+              var streetAddressNumber = address["EngStreet"]["BuildingNoFrom"]
+              var streetAddress = address["EngStreet"]["StreetName"]
+              console.log(streetAddressNumber)
+              console.log(streetAddress)
+            
+              var newLine = "<tr><td>"+buildingName+"</td><td>"+streetAddressNumber + " " + streetAddress + "</td><td></td><td></td></tr>"
+              var theTable = $("#theTable")
+                            .find("tbody")
+                            .append(newLine)
+
+            }
+            
+          }
+        }) //Load Callback
+      }) //Button 
+    }) //Document
+  </script>
+</body>
+</html>

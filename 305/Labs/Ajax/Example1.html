@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Load Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>First Ajax Program</h1>
+
+  <div id="div1"><p>Data to be loaded<p></div>
+  <button>Get External Content</button>
+  
+  <script>
+    
+    // Load code when all the Dom has happened
+    $(document).ready(function(){
+      //Add a callback for the button
+      $("button").click(function(){
+            $("#div1").load("ajax1_data.txt");
+    });
+});
+    
+   
+  </script>
+</body>
+</html>

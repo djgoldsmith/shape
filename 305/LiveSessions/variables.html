@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <h1>Vars Program</h1>
+  
+  <script>
+    //Numerical values can be both floating point (decimal) or integers
+    var aNumber = 5
+    //Console.log(output) allows us to display output on the screen
+    console.log("The Number was: " + aNumber)
+    
+    //Lists can contain several items of data
+    var aList = ["Foo", "Bar", "Baz"]
+    //They are indexed (starting at 0)
+    console.log(aList[0]) //Foo?
+    console.log(aList[1]) //Bar?
+    //We can change values using the [] syntax
+    aList[1] = "BAR"
+    
+    // ===== Loops =====
+    //For loops are used when we know how many items there are
+    for (let i = 0; i < aList.length; i++){
+      console.log("Item at list index " + i + " == " + aList[i])
+    }
+    
+    //For - In loops (shortcut for arrays)
+    for (item in aList){
+      console.log("Item " + item)
+    }
+    
+    
+    //SELECTION EXAMPLES
+    var myName = "Dan"
+    //If allows us to make something happen based on a variable
+    if (myName == "Dan"){  //So if the variable "myName" is set to dan
+      console.log("Dan is the Teacher") //We print this
+    }
+    else if (myName == "James"){ //Else if allows us to add more choices
+      console.log("James is Dans Boss")
+    }
+    else { //The final Else is the default condition if nothing else is met
+      console.log("You must be a Student")
+    }
+    
+  </script>
+  </body>
+</html>
