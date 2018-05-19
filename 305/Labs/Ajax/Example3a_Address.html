@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Load Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <h1>Simple Address Lookup</h1>
+
+  <div id="div1"><p>Data to be loaded<p></div>
+  <button id="loadButton">Get External Content</button>
+  
+  <script>
+    // Load code when all the Dom has happened
+    $(document).ready(function(){
+      //Callback for Button
+      $.ajaxSetup({dataType: "json"})
+      $("#loadButton").click(function(){
+        var URL = "https://www.als.ogcio.gov.hk/lookup?q=VTC"
+        console.log("Making Request from " + URL)
+        $.getJSON(URL, function(data, status, xhr){
+          //If the data had an error loading correctly
+          //alert(status)
+          console.log(status)
+          if (status == "error"){
+            alert("Error Loading Text")
+          }
+          else{
+            //alert("Data loaded succesfully")
+            console.log(data)
+            //Now we have to do something with it.
+            console.log(data["SuggestedAddress"])
+            var item = data["SuggestedAddress"][0] //Fetch ONLY THE FIRST from the list
+            
+            //Store the Address Object
+            var address = item["Address"]["PremisesAddress"]["EngPremisesAddress"]
+            var buildingName = address["BuildingName"]
+            console.log(address)
+            console.log(buildingName)
+            var streetAddressNumber = address["EngStreet"]["BuildingNoFrom"]
+            var streetAddress = address["EngStreet"]["StreetName"]
+            console.log(streetAddressNumber)
+            console.log(streetAddress)
+          }
+        }) //Load Callback
+      }) //Button 
+    }) //Document
+  </script>
+</body>
+</html>
