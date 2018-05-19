@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+  <h1>First Program</h1>
+  
+  <script>
+  
+  //Simple Objects
+  simpleObject = {name: "Dan", job: "Lecturer"}
+  //Getting and setting values
+  console.log(simpleObject.name) //Will get the name stored in the object
+  console.log(simpleObject['job']) //Get using bracket syntax
+    
+  //Functions to create objects
+  var Person = function(given, family){
+    this.given = given
+    this.family = family
+  }
+  
+  //Create an object of type person called "dan"
+  var dan = new Person("Dan", "Goldsmith")
+  //and another object of type person called james
+  var james = new Person("James", "Shuttleworth")
+  
+  //Functions in objects
+  var countingObject = {
+    value: 0,
+    increment: function(number) {
+        this.value += number
+    }
+  }
+  </script>
+  </body>
+</html>
