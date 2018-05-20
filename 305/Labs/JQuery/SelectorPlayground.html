@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+  </head>
+ 
+  <body>
+  <h1>Selector Playground</h1>
+    
+    <!-- Add some items to play with -->
+    <div id="theDiv">
+      This is a Div
+    </div>
+    
+    <p>Paragraph Text</p>
+    <p>And More Paragapth text</p>
+    
+    <ul class="theList">
+      <li class="oddList">List Item 1</li>
+      <li class="evenList">List item 2</li>
+      <li class="oddList">List Item 3</li>
+      <li class="evenList">List item 4</li>
+    </ul>
+    
+    <!-- Dont Change this bit -->
+    <button id="theButton">Press Me</button>
+    
+    <script>
+      //CHANGE THIS
+      function doThings(){
+        $("p").hide()
+      }
+      
+    //Button Callback
+    $("#theButton").click(doThings)
+    </script>
+  </body>
+</html>
